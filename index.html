@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>プレゼント交換</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+
+        h1 {
+            color: #4285f4;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+            color: #34a853;
+            display: none; /* 結果は初めは非表示にする */
+        }
+
+        .reveal-button {
+            cursor: pointer;
+            color: #4285f4;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>プレゼント交換</h1>
+
+    <form id="participantsForm">
+        <label for="participantNames">参加者の名前（コンマで区切って入力）：</label>
+        <input type="text" id="participantNames" required>
+        <button type="button" onclick="assignGift()">プレゼントを交換する</button>
+    </form>
+
+    <div id="result"></div>
+
+    <script>
+        function assignGift() {
+            // サーバーサイドでの結果生成ロジックをここに追加
+
+            // 仮のデータを使用する例
+            const resultData = {
+                yourRecipient: "相手の名前"
+            };
+
+            // 結果を表示
+            document.getElementById("result").innerHTML = `あなたが渡す相手: <span class="reveal-button" onclick="revealResult()">${resultData.yourRecipient}</span>`;
+            document.getElementById("result").style.display = "block"; // 結果を表示
+        }
+
+        function revealResult() {
+            // ユーザーが結果をクリックした時の処理をここに追加
+            alert("結果を見ることができます！");
+        }
+    </script>
+
+</body>
+</html>
